@@ -1,0 +1,20 @@
+{
+  "name": "worker-thread-pool",
+  "version": "0.1.0",
+  "description": "",
+  "main": "lib/Worker.js",
+  "scripts": {
+    "unit": "tap test/*.test.js --node-arg=--experimental-worker",
+    "test": "npm run lint && npm run unit",
+    "lint": "./node_modules/eslint/bin/eslint.js lib/* test/*",
+    "coveralls": "npm run unit --  --cov",
+    "coverage-report": "npm run coveralls && tap --coverage-report=lcov"
+  },
+  "author": "Denis Fäcke",
+  "license": "MIT",
+  "devDependencies": {
+    "coveralls": "^3.0.2",
+    "eslint": "^5.2.0",
+    "tap": "^12.0.1"
+  }
+}
