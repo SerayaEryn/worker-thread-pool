@@ -1,38 +1,39 @@
-'use strict';
+'use strict'
 
-const t = require('tap');
-const test = t.test;
-const Pool = require('../lib/Worker');
+const t = require('tap')
+const test = t.test
+const Pool = require('../lib/Worker')
+const path = require('path')
 
 test('should create pool', (t) => {
-  t.plan(1);
+  t.plan(1)
   const pool = new Pool({
-    path: __dirname + '/worker.js'
+    path: path.join(__dirname, '/worker.js')
   })
 
-  return pool.run({test: 1})
+  return pool.run({ test: 1 })
     .then((result) => {
       t.strictEquals(result, 'hello world')
-      pool.close();
-    });
-});
+      pool.close()
+    })
+})
 
 test('should create pool', (t) => {
-  t.plan(1);
+  t.plan(1)
   const pool = new Pool({
-    path: __dirname + '/worker.js',
+    path: path.join(__dirname, '/worker.js'),
     size: 1
   })
 
   return Promise.all([
-    pool.run({test: 1}),
-    pool.run({test: 2}),
-    pool.run({test: 3}),
-    pool.run({test: 4})
+    pool.run({ test: 1 }),
+    pool.run({ test: 2 }),
+    pool.run({ test: 3 }),
+    pool.run({ test: 4 })
   ])
     .then((result) => {
       t.deepEquals(result, ['hello world', 'hello world', 'hello world', 'hello world'])
-      pool.close();
+      pool.close()
     })
-    .catch((error) => t.error(error));
-});
+    .catch((error) => t.error(error))
+})

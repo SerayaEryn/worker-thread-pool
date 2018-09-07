@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/SerayaEryn/worker-thread-pool.svg?branch=master)](https://travis-ci.org/SerayaEryn/worker-thread-pool)
 [![Coverage Status](https://coveralls.io/repos/github/SerayaEryn/worker-thread-pool/badge.svg?branch=master)](https://coveralls.io/github/SerayaEryn/worker-thread-pool?branch=master)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 A easy way to create a pool of worker threads.
 
