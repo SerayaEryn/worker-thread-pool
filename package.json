@@ -23,8 +23,5 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SerayaEryn/worker-thread-pool.git"
-  },
-  "dependencies": {
-    "why-is-node-running": "^2.0.3"
   }
 }
