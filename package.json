@@ -1,7 +1,7 @@
 {
   "name": "worker-thread-pool",
   "version": "0.1.0",
-  "description": "",
+  "description": "A easy way to create a pool of worker threads.",
   "main": "lib/Worker.js",
   "scripts": {
     "unit": "tap test/*.test.js --node-arg=--experimental-worker",
