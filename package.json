@@ -20,6 +20,15 @@
   "engines": {
     "node": ">= 10.5.0"
   },
+  "keywords": [
+    "pool",
+    "worker",
+    "thread-pool",
+    "workers",
+    "thread",
+    "worker_threads",
+    "threads"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SerayaEryn/worker-thread-pool.git"
