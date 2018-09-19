@@ -6,7 +6,7 @@ const Pool = require('../lib/Worker')
 const path = require('path')
 
 test('should create pool', (t) => {
-  t.plan(1)
+  t.plan(2)
   const pool = new Pool({
     path: path.join(__dirname, '/worker.js')
   })
@@ -14,12 +14,14 @@ test('should create pool', (t) => {
   return pool.run({ test: 1 })
     .then((result) => {
       t.strictEquals(result, 'hello world')
+      console.log('close')
       pool.close()
     })
+    .then(() => t.pass())
 })
 
-test('should create pool', (t) => {
-  t.plan(1)
+test('should close pool', (t) => {
+  t.plan(2)
   const pool = new Pool({
     path: path.join(__dirname, '/worker.js'),
     size: 1
@@ -35,5 +37,23 @@ test('should create pool', (t) => {
       t.deepEquals(result, ['hello world', 'hello world', 'hello world', 'hello world'])
       pool.close()
     })
-    .catch((error) => t.error(error))
+    .then(() => {
+      t.equals(pool.pool.length, 0)
+    })
+})
+
+test('should create new worker if error in worker', (t) => {
+  t.plan(3)
+  const pool = new Pool({
+    path: path.join(__dirname, '/boom.js'),
+    size: 1
+  })
+
+  return pool.run({ test: 1 })
+    .catch((err) => {
+      t.equals(err.message, 'boooom')
+      t.equals(pool.pool.length, 1)
+      pool.close()
+      t.equals(pool.pool.length, 0)
+    })
 })
