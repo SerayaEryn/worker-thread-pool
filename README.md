@@ -5,7 +5,7 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![NPM version](https://img.shields.io/npm/v/worker-thread-pool.svg?style=flat)](https://www.npmjs.com/package/worker-thread-pool)
 
-A easy way to create a pool of worker threads.
+An easy way to create a pool of worker threads.
 
 ## Usage
 
