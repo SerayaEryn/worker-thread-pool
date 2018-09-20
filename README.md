@@ -58,7 +58,7 @@ Passes the `workerData` to the worker and waits until the worker sends back an a
 
 ### Pool#close()
 
-Removes all workers from the pool and calls `terminate` them. Returns a Promise.
+Removes all workers from the pool and calls `terminate` on them. Returns a Promise.
 
 ## License
 
