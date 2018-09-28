@@ -14,7 +14,6 @@ test('should create pool', (t) => {
   return pool.run({ test: 1 })
     .then((result) => {
       t.strictEquals(result, 'hello world')
-      console.log('close')
       pool.close()
     })
     .then(() => t.pass())
