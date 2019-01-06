@@ -14,7 +14,7 @@ test('should create pool', (t) => {
   return pool.run({ test: 1 })
     .then((result) => {
       t.strictEquals(result, 'hello world')
-      pool.close()
+      pool.end()
     })
     .then(() => t.pass())
 })
@@ -34,10 +34,10 @@ test('should close pool', (t) => {
   ])
     .then((result) => {
       t.deepEquals(result, ['hello world', 'hello world', 'hello world', 'hello world'])
-      pool.close()
+      pool.end()
     })
     .then(() => {
-      t.equals(pool.pool.length, 0)
+      t.equals(pool.length(), 0)
     })
 })
 
@@ -51,8 +51,8 @@ test('should create new worker if error in worker', (t) => {
   return pool.run({ test: 1 })
     .catch((err) => {
       t.equals(err.message, 'boooom')
-      t.equals(pool.pool.length, 1)
-      pool.close()
-      t.equals(pool.pool.length, 0)
+      t.equals(pool.length(), 1)
+      pool.end()
+      t.equals(pool.length(), 0)
     })
 })
