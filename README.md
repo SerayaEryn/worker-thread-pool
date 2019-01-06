@@ -56,9 +56,10 @@ The size of the thread pool. Defaults to `4`.
 
 Passes the `workerData` to the worker and waits until the worker sends back an answer. Resolves the answer of the worker in a Promise.
 
-### Pool#close()
+### Pool#end()
 
-Removes all workers from the pool and calls `terminate` on them. Returns a Promise.
+Removes all workers from the pool, calls `terminate` on them and then emits a `close` event. 
+If an error occurs during an `error` event will be emitted.
 
 ## License
 

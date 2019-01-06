@@ -56,3 +56,14 @@ test('should create new worker if error in worker', (t) => {
       t.equals(pool.length(), 0)
     })
 })
+
+test('should emit close', (t) => {
+  t.plan(1)
+  const pool = new Pool({
+    path: path.join(__dirname, '/boom.js'),
+    size: 1
+  })
+
+  pool.on('close', () => t.pass('close emitted'))
+  pool.end()
+})
