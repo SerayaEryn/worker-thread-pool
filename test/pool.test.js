@@ -67,3 +67,15 @@ test('should emit close', (t) => {
   pool.on('close', () => t.pass('close emitted'))
   pool.end()
 })
+
+test('should return queue length', (t) => {
+  t.plan(2)
+  const pool = new Pool({
+    path: path.join(__dirname, '/boom.js'),
+    size: 1
+  })
+
+  t.strictEquals(pool.queueLength(), 0)
+  pool.on('close', () => t.pass('close emitted'))
+  pool.end()
+})

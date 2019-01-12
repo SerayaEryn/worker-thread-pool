@@ -56,6 +56,10 @@ The size of the thread pool. Defaults to `4`.
 
 Passes the `workerData` to the worker and waits until the worker sends back an answer. Resolves the answer of the worker in a Promise.
 
+### Poll#queueLength()
+
+Returns the current length of the queue.
+
 ### Pool#end()
 
 Removes all workers from the pool, calls `terminate` on them and then emits a `close` event. 
