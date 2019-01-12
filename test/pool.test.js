@@ -37,7 +37,7 @@ test('should close pool', (t) => {
       pool.end()
     })
     .then(() => {
-      t.equals(pool.length(), 0)
+      t.equals(pool.poolLength(), 0)
     })
 })
 
@@ -51,9 +51,9 @@ test('should create new worker if error in worker', (t) => {
   return pool.run({ test: 1 })
     .catch((err) => {
       t.equals(err.message, 'boooom')
-      t.equals(pool.length(), 1)
+      t.equals(pool.poolLength(), 1)
       pool.end()
-      t.equals(pool.length(), 0)
+      t.equals(pool.poolLength(), 0)
     })
 })
 
