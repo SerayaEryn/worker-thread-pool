@@ -58,7 +58,7 @@ Passes the `workerData` to the worker and waits until the worker sends back an a
 
 Returns the current length of the queue.
 
-### Pool#end()
+### Pool#close()
 
 Removes all workers from the pool, calls `terminate` on them and then emits a `close` event. 
 If an error occurs during an `error` event will be emitted.
