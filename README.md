@@ -9,7 +9,7 @@ An easy way to create a pool of worker threads.
 
 ## Usage
 
-To use the `worker-thread-pool` module you need to run at least node v10.5.0 and start node with the `--experimental-worker` flag.
+If being used with node v10.5.0 to v11.6.0 the `worker-thread-pool` module requires node to be started with the `--experimental-worker` flag.
 
 ```js
 //main.js
@@ -28,12 +28,10 @@ pool.run({name: 'world'})
 //worker.js
 const { parentPort } = require('worker_threads');
 
-parentPort.on('message', handleMessage);
-
-function handleMessage(message) {
+parentPort.on('message', (message) => {
   message.port.postMessage('hello ' + message.name);
   message.port.close();
-}
+});
 ```
 
 ## API
