@@ -58,6 +58,10 @@ Passes the `workerData` to the worker and waits until the worker sends back an a
 
 Returns the current length of the queue.
 
+### Poll#poolLength()
+
+Returns the current size of the pool.
+
 ### Pool#close()
 
 Removes all workers from the pool, calls `terminate` on them and then emits a `close` event. 
