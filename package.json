@@ -35,5 +35,8 @@
   },
   "dependencies": {
     "aggregate-error": "^3.0.0"
-  }
+  },
+  "files": [
+    "lib"
+  ]
 }
