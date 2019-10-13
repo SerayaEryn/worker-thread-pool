@@ -4,16 +4,14 @@
   "description": "A easy way to create a pool of worker threads.",
   "main": "lib/Worker.js",
   "scripts": {
-    "unit": "tap test/*.test.js --node-arg=--experimental-worker",
+    "unit": "tap test/*.test.js --node-arg=--experimental-worker --coverage-report=lcov --no-browser",
     "test": "npm run lint && npm run unit",
     "lint": "standard lib/* test/*",
-    "coveralls": "npm run unit --  --cov",
-    "coverage-report": "npm run coveralls && tap --coverage-report=lcov"
+    "coverage-report": "npm run test && tap --coverage-report=lcov"
   },
   "author": "Denis Fäcke",
   "license": "MIT",
   "devDependencies": {
-    "coveralls": "^3.0.2",
     "standard": "^14.0.0",
     "tap": "^14.1.3"
   },
