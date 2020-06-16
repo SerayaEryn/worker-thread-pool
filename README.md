@@ -3,7 +3,7 @@
 ![Build Status](https://github.com/SerayaEryn/worker-thread-pool/workflows/ci/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/SerayaEryn/worker-thread-pool/badge.svg?branch=master)](https://coveralls.io/github/SerayaEryn/worker-thread-pool?branch=master)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![NPM version](https://img.shields.io/npm/v/worker-thread-pool.svg?style=flat)](https://www.npmjs.com/package/worker-thread-pool) [![Greenkeeper badge](https://badges.greenkeeper.io/SerayaEryn/worker-thread-pool.svg)](https://greenkeeper.io/)
+[![NPM version](https://img.shields.io/npm/v/worker-thread-pool.svg?style=flat)](https://www.npmjs.com/package/worker-thread-pool)
 
 An easy way to create a pool of worker threads.
 
